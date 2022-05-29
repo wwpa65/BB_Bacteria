@@ -59,23 +59,23 @@ function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
   d3.json("public/samples.json").then((data) => {
     // 3. Create a variable that holds the samples array.
-    // console.log(data);
-    // var samples = data.samples;
+    console.log(data);
+    var samples = data.samples;
 
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-    // var sampleArray = samples.filter(sampleObj => sampleObj.id == sample);
-    // console.log(sampleArray);
+    var sampleArray = samples.filter(sampleObj => sampleObj.id == sample);
+    console.log(sampleArray);
     //  5. Create a variable that holds the first sample in the array.
 
-    // var sampleResult = sampleArray[0];
-    // console.log(sampleResult);
+    var sampleResult = sampleArray[0];
+    console.log(sampleResult);
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-    // var otu = sampleResult.otu_ids;
-    // console.log(otu);
-    // var otu_values = sampleResult.sample_values;
-    // console.log(otu_values);
-    // var otu_labels = sampleResult.otu_labels;
-    // console.log(otu_labels);
+    var otu = sampleResult.otu_ids;
+    console.log(otu);
+    var otu_values = sampleResult.sample_values;
+    console.log(otu_values);
+    var otu_labels = sampleResult.otu_labels;
+    console.log(otu_labels);
 
     // ========================================
     // BAR PLOT
@@ -84,32 +84,32 @@ function buildCharts(sample) {
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
 
-    // var yticks = otu.slice(0, 10).map(otus => "OTU " + otus).reverse();
-    // console.log(yticks);
+    var yticks = otu.slice(0, 10).map(otus => "OTU " + otus).reverse();
+    console.log(yticks);
 
     // 8. Create the trace for the bar chart. 
-    // var barData = [{
-    //   x: otu_values.slice(0, 10).reverse(),
-    //   y: yticks,
-    //   text: otu_labels.slice(0, 10).reverse(),
-    //   type: "bar",
-    //   orientation: "h"
-    // }];
+    var barData = [{
+      x: otu_values.slice(0, 10).reverse(),
+      y: yticks,
+      text: otu_labels.slice(0, 10).reverse(),
+      type: "bar",
+      orientation: "h"
+    }];
 
     // 9. Create the layout for the bar chart. 
-    // var barLayout = {
-    //   title: "Top 10 Bacteria Cultures Found",
-    //   margin: {
-    //     l: 100,
-    //     r: 100,
-    //     t: 100,
-    //     b: 100
-    //   }
-    // };
+    var barLayout = {
+      title: "Top 10 Bacteria Cultures Found",
+      margin: {
+        l: 100,
+        r: 100,
+        t: 100,
+        b: 100
+      }
+    };
 
 
     // 10. Use Plotly to plot the data with the layout. 
-    // Plotly.newPlot("plot", barData, barLayout);
+    Plotly.newPlot("bar", barData, barLayout);
 
     // Deliverable 1 Step 10. Use Plotly to plot the data with the layout. 
     // Plotly.newPlot();
@@ -118,46 +118,46 @@ function buildCharts(sample) {
     // BUBBLE PLOT
     // =========================================
     // 1. Create the trace for the bubble chart.
-    // otu_valuesReversed = otu_values.reverse();
-    // otu_idReversed = otu.reverse();
-    // otu_labelsReversed = otu_labels.reverse();
+    otu_valuesReversed = otu_values.reverse();
+    otu_idReversed = otu.reverse();
+    otu_labelsReversed = otu_labels.reverse();
 
-    // var bubbleData = [{
-    //   x: otu_idReversed,
-    //   y: otu_valuesReversed,
-    //   text1: otu_labelsReversed,
-    //   type: "bubble",
-    //   mode: 'markers',
-    //   marker: {
-    //     color: otu_idReversed,
-    //     colorscale: 'Earth',
-    //     size: otu_valuesReversed,
-    //     sizeref: 0.05,
-    //     sizemode: 'area'
-    //   },
-    //   hoverinfo: "x1+y1+text1"
+    var bubbleData = [{
+      x: otu_idReversed,
+      y: otu_valuesReversed,
+      text1: otu_labelsReversed,
+      type: "bubble",
+      mode: 'markers',
+      marker: {
+        color: otu_idReversed,
+        colorscale: 'Earth',
+        size: otu_valuesReversed,
+        sizeref: 0.05,
+        sizemode: 'area'
+      },
+      hoverinfo: "x1+y1+text1"
 
-    // }];
+    }];
 
     // 2. Create the layout for the bubble chart.
-    // var bubbleLayout = {
-    //   title: "Bacteria Cultures per Sample",
-    //   xaxis: { zeroline: false, title: 'OTU IS' },
-    //   hovermode: "closest",
-    //   showlegend: false,
-    //   height: 400,
-    //   width: 1200,
-    //   margin: {
-    //     l: 100,
-    //     r: 100,
-    //     t: 100,
-    //     b: 100
-    //   }
+    var bubbleLayout = {
+      title: "Bacteria Cultures per Sample",
+      xaxis: { zeroline: false, title: 'OTU IS' },
+      hovermode: "closest",
+      showlegend: false,
+      height: 400,
+      width: 1200,
+      margin: {
+        l: 100,
+        r: 100,
+        t: 100,
+        b: 100
+      }
 
-    // };
+    };
 
     // 3. Use Plotly to plot the data with the layout.
-    // Plotly.newPlot("plot", bubbleData, bubbleLayout);
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
     // Plotly.newPlot();
 
     //========================================
@@ -167,7 +167,7 @@ function buildCharts(sample) {
     var samples = data.samples;
     console.log(samples);
     // Create a variable that filters the samples for the object with the desired sample number.
-    var sampleArray = samples.filter(sampleObj => sampleObj.id == sample);
+    // var sampleArray = samples.filter(sampleObj => sampleObj.id == sample);
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
 
     var metadata = data.metadata;
@@ -194,27 +194,27 @@ function buildCharts(sample) {
     console.log(freq);
 
     // // Create the yticks for the bar chart.
-    var yticks = otu.slice(0, 10).map(otus => "OTU " + otus).reverse();
+    // var yticks = otu.slice(0, 10).map(otus => "OTU " + otus).reverse();
 
-    var barData = [{
-      x: otu_values.slice(0, 10).reverse(),
-      y: yticks,
-      text: otu_labels.slice(0, 10).reverse(),
-      type: "bar",
-      orientation: "h"
-    }];
+    // var barData = [{
+    //   x: otu_values.slice(0, 10).reverse(),
+    //   y: yticks,
+    //   text: otu_labels.slice(0, 10).reverse(),
+    //   type: "bar",
+    //   orientation: "h"
+    // }];
 
-    var barLayout = {
-      title: "Top 10 Bacteria Cultures Found",
-      margin: {
-        l: 100,
-        r: 100,
-        t: 100,
-        b: 100
-      }
-    };
+    // var barLayout = {
+    //   title: "Top 10 Bacteria Cultures Found",
+    //   margin: {
+    //     l: 100,
+    //     r: 100,
+    //     t: 100,
+    //     b: 100
+    //   }
+    // };
     // Use Plotly to plot the bar data and layout.
-    Plotly.newPlot("plot", barData, barLayout);
+    // Plotly.newPlot("bar", barData, barLayout);
     // Plotly.newPlot();
 
     // // Use Plotly to plot the bubble data and layout.
@@ -256,7 +256,7 @@ function buildCharts(sample) {
 
     };
 
-    Plotly.newPlot("plot", bubbleData, bubbleLayout);
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
     // Plotly.newPlot();
 
     // // 4. Create the trace for the gauge chart.
@@ -293,7 +293,7 @@ function buildCharts(sample) {
     
     // // 6. Use Plotly to plot the gauge data and layout.
     
-    Plotly.newPlot('plot', gaugeData, gaugeLayout)
+    Plotly.newPlot('gauge', gaugeData, gaugeLayout)
     // Plotly.newplot();
 
   });
