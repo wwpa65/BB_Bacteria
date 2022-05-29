@@ -32,7 +32,7 @@ The bacterial data in JSON formt were successfully extracted to retrieve OTU ID,
 
 
 
-![Dashboard](/static/images/gauge_plot.png)
+![Dashboard](/static/images/dashboard.png)
 
 
 ## Summary
