@@ -20,7 +20,20 @@ GitHub
 
 The bacterial data in JSON formt were successfully extracted to retrieve OTU ID, Values (counts), information on bacterial species (labels) usind d3.json(data).then(..) method. A dropdown menu was developed to select sample identiofication number for populating information into the dashboard. 
 
-![Bar plot](../../images/Initial-dashboard.png)
+![Demographics](/static/images/Initial-dashboard.png)
+
+![Bar plot](/static/images/bar_graph.png)
+
+
+![Bubble plot](/static/images/bubble_plot.png)
+
+
+![Gauge plot](/static/images/gauge_plot.png)
+
+
+
+![Dashboard](/static/images/gauge_plot.png)
+
 
 ## Summary
 
