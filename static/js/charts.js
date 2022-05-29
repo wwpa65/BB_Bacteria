@@ -99,6 +99,8 @@ function buildCharts(sample) {
     // 9. Create the layout for the bar chart. 
     var barLayout = {
       title: "Top 10 Bacteria Cultures Found",
+      // plot_bgcolor: 'lightgray',
+      // fillcolor: 'lightgray',
       margin: {
         l: 100,
         r: 100,
