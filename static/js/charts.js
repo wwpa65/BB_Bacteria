@@ -264,7 +264,7 @@ function buildCharts(sample) {
       {
         domain: { x: [0, 1], y: [0, 1] },
         value: freq,
-        title: { text: "Scrubs per Week" },
+        title: '<b>Belly Button Washing Frequency</b> <br>Scrubs Per Week',
         type: "indicator",
         mode: "gauge+number",
         gauge: {
@@ -299,3 +299,4 @@ function buildCharts(sample) {
 
   });
 }
+
