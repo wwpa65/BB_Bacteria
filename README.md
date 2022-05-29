@@ -44,6 +44,9 @@ Figures 1-5 depits the screenshots for demographics, bar plot, bubble plot, gaug
 
 **Figure 5** Dashboard showing all information for the volunteer id 940
 
+![olored Dashboard](/static/images/dashboard-colored bg.png)
+
+**Figure 6** Colored Dashboard showing all information for the volunteer id 940
 
 ## Summary
 
