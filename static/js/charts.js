@@ -78,7 +78,7 @@ function buildCharts(sample) {
     console.log(otu_labels);
 
     // ========================================
-    // BAR PLOT
+    //        Deliverable 1. BAR PLOT
     // ========================================
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -115,7 +115,7 @@ function buildCharts(sample) {
     // Plotly.newPlot();
 
     // ========================================
-    // BUBBLE PLOT
+    //        Deliverable 2. BUBBLE PLOT
     // =========================================
     // 1. Create the trace for the bubble chart.
     otu_valuesReversed = otu_values.reverse();
@@ -161,11 +161,13 @@ function buildCharts(sample) {
     // Plotly.newPlot();
 
     //========================================
-    //GAUGE PLOT
+    //       Deliverable 3. GAUGE PLOT
     //========================================
     // Create a variable that holds the samples array. 
-    var samples = data.samples;
-    console.log(samples);
+
+    // Note: See CODE in Deliverable 1
+    // var samples = data.samples;
+    // console.log(samples);
     // Create a variable that filters the samples for the object with the desired sample number.
     // var sampleArray = samples.filter(sampleObj => sampleObj.id == sample);
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
@@ -174,26 +176,33 @@ function buildCharts(sample) {
     var metadataArray = metadata.filter(sampleObj => sampleObj.id == sample);
 
     // Create a variable that holds the first sample in the array.
-    var sampleResult = sampleArray[0];
 
-    console.log(sampleResult);
+    // Note: See CODE in Deliverable 1
+
+    // var sampleResult = sampleArray[0];
+    // console.log(sampleResult);
+
     // 2. Create a variable that holds the first sample in the metadata array.
     var metadataResult = metadataArray[0];
     console.log(metadataResult)
     console.log(metadataResult.wfreq);
     // Create variables that hold the otu_ids, otu_labels, and sample_values.
-    var otu = sampleResult.otu_ids;
-    console.log(otu);
-    var otu_values = sampleResult.sample_values;
-    console.log(otu_values);
-    var otu_labels = sampleResult.otu_labels;
-    console.log(otu_labels);
+
+    // Note: See CODE in Deliverable 1
+    // var otu = sampleResult.otu_ids;
+    // console.log(otu);
+    // var otu_values = sampleResult.sample_values;
+    // console.log(otu_values);
+    // var otu_labels = sampleResult.otu_labels;
+    // console.log(otu_labels);
 
     // 3. Create a variable that holds the washing frequency.
     var freq = parseInt(metadataResult.wfreq);
     console.log(freq);
 
     // // Create the yticks for the bar chart.
+
+    // Note: See CODE in Deliverable 1
     // var yticks = otu.slice(0, 10).map(otus => "OTU " + otus).reverse();
 
     // var barData = [{
@@ -217,46 +226,47 @@ function buildCharts(sample) {
     // Plotly.newPlot("bar", barData, barLayout);
     // Plotly.newPlot();
 
-    // // Use Plotly to plot the bubble data and layout.
+    // Use Plotly to plot the bubble data and layout.
 
-    otu_valuesReversed = otu_values.reverse();
-    otu_idReversed = otu.reverse();
-    otu_labelsReversed = otu_labels.reverse();
+    // Note: See CODE in Deliverable 2
+    // otu_valuesReversed = otu_values.reverse();
+    // otu_idReversed = otu.reverse();
+    // otu_labelsReversed = otu_labels.reverse();
 
-    var bubbleData = [{
-      x: otu_idReversed,
-      y: otu_valuesReversed,
-      text: otu_labelsReversed,
-      type: "bubble",
-      mode: 'markers',
-      marker: {
-        color: otu_idReversed,
-        colorscale: 'Earth',
-        size: otu_valuesReversed,
-        sizeref: 0.05,
-        sizemode: 'area'
-      },
-      hoverinfo: "x+y+text"
+    // var bubbleData = [{
+    //   x: otu_idReversed,
+    //   y: otu_valuesReversed,
+    //   text: otu_labelsReversed,
+    //   type: "bubble",
+    //   mode: 'markers',
+    //   marker: {
+    //     color: otu_idReversed,
+    //     colorscale: 'Earth',
+    //     size: otu_valuesReversed,
+    //     sizeref: 0.05,
+    //     sizemode: 'area'
+    //   },
+    //   hoverinfo: "x+y+text"
 
-    }];
+    // }];
 
-    var bubbleLayout = {
-      title: "Bacteria Cultures per Sample",
-      xaxis: { zeroline: false, title: 'OTU ID' },
-      hovermode: "closest",
-      showlegend: false,
-      height: 400,
-      width: 1200,
-      margin: {
-        l: 100,
-        r: 100,
-        t: 100,
-        b: 100
-      }
+    // var bubbleLayout = {
+    //   title: "Bacteria Cultures per Sample",
+    //   xaxis: { zeroline: false, title: 'OTU ID' },
+    //   hovermode: "closest",
+    //   showlegend: false,
+    //   height: 400,
+    //   width: 1200,
+    //   margin: {
+    //     l: 100,
+    //     r: 100,
+    //     t: 100,
+    //     b: 100
+    //   }
 
-    };
+    // };
 
-    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+    // Plotly.newPlot("bubble", bubbleData, bubbleLayout);
     // Plotly.newPlot();
 
     // // 4. Create the trace for the gauge chart.
@@ -287,13 +297,14 @@ function buildCharts(sample) {
 
       }];
 
-      
-    // // 5. Create the layout for the gauge chart.
-    var gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0 }
-  };
-    
-    // // 6. Use Plotly to plot the gauge data and layout.
-    
+
+    // 5. Create the layout for the gauge chart.
+    var gaugeLayout = {
+      width: 600, height: 500, margin: { t: 0, b: 0 }
+    };
+
+    // 6. Use Plotly to plot the gauge data and layout.
+
     Plotly.newPlot('gauge', gaugeData, gaugeLayout)
     // Plotly.newplot();
 
