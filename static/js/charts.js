@@ -78,7 +78,7 @@ function buildCharts(sample) {
     console.log(otu_labels);
 
     // ========================================
-    //        Deliverable 1. BAR PLOT
+    //        Deliverable 1. BAR CHART
     // ========================================
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -117,7 +117,7 @@ function buildCharts(sample) {
     // Plotly.newPlot();
 
     // ========================================
-    //        Deliverable 2. BUBBLE PLOT
+    //        Deliverable 2. BUBBLE CHART
     // =========================================
     // 1. Create the trace for the bubble chart.
     otu_valuesReversed = otu_values.reverse();
@@ -163,7 +163,7 @@ function buildCharts(sample) {
     // Plotly.newPlot();
 
     //========================================
-    //       Deliverable 3. GAUGE PLOT
+    //       Deliverable 3. GAUGE CHART
     //========================================
     // Create a variable that holds the samples array. 
 
