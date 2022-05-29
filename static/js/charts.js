@@ -125,7 +125,7 @@ function buildCharts(sample) {
     var bubbleData = [{
       x: otu_idReversed,
       y: otu_valuesReversed,
-      text1: otu_labelsReversed,
+      text: otu_labelsReversed,
       type: "bubble",
       mode: 'markers',
       marker: {
@@ -135,14 +135,14 @@ function buildCharts(sample) {
         sizeref: 0.05,
         sizemode: 'area'
       },
-      hoverinfo: "x1+y1+text1"
+      hoverinfo: "x+y+text"
 
     }];
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
       title: "Bacteria Cultures per Sample",
-      xaxis: { zeroline: false, title: 'OTU IS' },
+      xaxis: { zeroline: false, title: 'OTU ID' },
       hovermode: "closest",
       showlegend: false,
       height: 400,
@@ -242,7 +242,7 @@ function buildCharts(sample) {
 
     var bubbleLayout = {
       title: "Bacteria Cultures per Sample",
-      xaxis: { zeroline: false, title: 'OTU IS' },
+      xaxis: { zeroline: false, title: 'OTU ID' },
       hovermode: "closest",
       showlegend: false,
       height: 400,
@@ -289,7 +289,8 @@ function buildCharts(sample) {
 
       
     // // 5. Create the layout for the gauge chart.
-    var gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+    var gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0 }
+  };
     
     // // 6. Use Plotly to plot the gauge data and layout.
     
