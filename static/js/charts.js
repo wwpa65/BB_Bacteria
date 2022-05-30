@@ -308,7 +308,7 @@ function buildCharts(sample) {
     // 6. Use Plotly to plot the gauge data and layout.
 
     Plotly.newPlot('gauge', gaugeData, gaugeLayout)
-    Plotly.newplot();
+    // Plotly.newplot();
 
   });
 }
